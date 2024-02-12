@@ -1,0 +1,36 @@
+
+.navbar {
+  background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #ffffff; /* White text color */
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff; /* White color for the toggler icon */
+}
+
+.navbar-nav .nav-item.active {
+  background-color: rgb(55, 133, 179); /* Dark background color for active item */
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgb(76, 230, 204), 136, 136); /* Lighter text color on hover */
+}
+
+/* Custom styles for the search form */
+form.d-flex {
+  margin-left: auto; /* Push the search form to the right */
+}
+
+.form-control,
+.btn-secondary {
+  border-color: #ffffff; /* White border color */
+  color: #ffffff; /* White text color */
+}
+
+.form-control::placeholder {
+  color: #aaaaaa; /* Lighter placeholder text color */
+}

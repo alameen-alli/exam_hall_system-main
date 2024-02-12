@@ -1,0 +1,123 @@
+Faculty of Arts and Humanities
+Faculty of Science
+Faculty of Social Sciences
+Faculty of Engineering
+Faculty of Medicine
+Faculty of Business and Economics
+
+Faculty of Arts and Humanities:
+
+Department of Literature
+Department of Languages
+Department of Philosophy
+Department of History
+Department of Fine Arts
+
+Faculty of Science:
+
+Department of Physics
+Department of Chemistry
+Department of Biology
+Department of Mathematics
+Department of Computer Science
+
+Faculty of Social Sciences:
+
+Department of Sociology
+Department of Psychology
+Department of Economics
+Department of Political Science
+Department of Geography
+
+Faculty of Engineering:
+
+Department of Civil Engineering
+Department of Mechanical Engineering
+Department of Electrical Engineering
+Department of Computer Engineering
+Department of Chemical Engineering
+
+Faculty of Medicine:
+
+Department of Medicine
+Department of Nursing
+Department of Pharmacology
+Department of Public Health
+Department of Allied Health Sciences
+
+Faculty of Business and Economics:
+
+Department of Business Administration
+Department of Economics
+Department of Finance
+Department of Marketing
+Department of Management
+
+
+
+
+
+
+Department of Literature:
+
+Introduction to World Literature
+Shakespearean Studies
+Modern American Literature
+Comparative Literature
+Creative Writing Workshop
+
+Department of Physics:
+
+Classical Mechanics
+Quantum Physics
+Thermodynamics
+Electromagnetism
+Astrophysics
+
+Department of Sociology:
+
+Introduction to Sociology
+Social Theory
+Gender and Society
+Sociology of Deviance
+Social Research Methods
+
+Department of Civil Engineering:
+
+Structural Engineering
+Transportation Engineering
+Environmental Engineering
+Geotechnical Engineering
+Construction Management
+Department of Medicine:
+
+Human Anatomy and Physiology
+Introduction to Clinical Medicine
+Medical Ethics
+Pharmacology and Therapeutics
+Pathology
+
+Department of Business Administration:
+
+Principles of Marketing
+Financial Accounting
+Organizational Behavior
+Strategic Management
+Business Ethics and Corporate Social Responsibility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

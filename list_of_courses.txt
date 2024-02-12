@@ -1,0 +1,77 @@
+Department of Literature:
+
+Introduction to Literary Analysis
+American Literature Survey
+British Romantic Poetry
+Contemporary World Fiction
+Shakespearean Tragedies
+
+Department of Languages:
+
+Elementary French
+Intermediate Spanish Conversation
+Advanced German Grammar
+Mandarin Chinese for Beginners
+Arabic Literature and Culture
+
+Department of Philosophy:
+
+Introduction to Ethics
+History of Western Philosophy
+Existentialism and Phenomenology
+Political Philosophy
+Philosophy of Mind
+
+Department of History:
+
+World History: Ancient Civilizations
+Modern European History
+History of the United States: Colonial Period to Present
+African History: From Pre-Colonial to Contemporary Times
+Asian History: From Imperial China to Modern Japan
+
+Department of Fine Arts:
+
+Art History: Renaissance to Baroque
+Introduction to Studio Art
+Music Appreciation
+Film Studies: History and Criticism
+Theater Production and Design
+
+
+
+Department of Physics:
+
+Classical Mechanics
+Quantum Mechanics
+Electromagnetism
+Thermodynamics and Statistical Mechanics
+Astrophysics
+Department of Chemistry:
+
+General Chemistry
+Organic Chemistry
+Inorganic Chemistry
+Physical Chemistry
+Analytical Chemistry
+Department of Biology:
+
+Cell Biology
+Genetics
+Ecology
+Human Anatomy and Physiology
+Microbiology
+Department of Mathematics:
+
+Calculus I
+Linear Algebra
+Differential Equations
+Abstract Algebra
+Real Analysis
+Department of Computer Science:
+
+Introduction to Programming
+Data Structures and Algorithms
+Database Systems
+Computer Networks
+Artificial Intelligence

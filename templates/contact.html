@@ -1,0 +1,47 @@
+<!-- templates/contact.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Contact Exam Hall Management System{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Contact Exam Hall Management System</h2>
+
+    <p>
+        We are here to assist you. If you have any questions, feedback, or concerns, please feel free to contact us using the information below:
+    </p>
+
+    <h4>Contact Information:</h4>
+    <ul>
+        <li>Email: support@examhallmanagement.com</li>
+        <li>Phone: +123 456 7890</li>
+        <li>Address: 123 Main Street, Yaba Tech College, Yaba Lagos</li>
+    </ul>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Send Us a Message:</h4>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Type your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+{% endblock %}

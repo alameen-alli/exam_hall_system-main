@@ -1,0 +1,141 @@
+<!-- templates/accounts/invigilator_signup.html -->
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Sign Up as Student{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center">Sign Up as Student</h2>
+          </div>
+          <div class="card-body">
+            <form method="post" action="{% url 'accounts:student_signup' %}">
+              {% csrf_token %}
+              
+              {% for field in form %}
+                <div class="mb-3">
+                  {{ field.label_tag }}
+                  {% if field.name == 'date_of_birth' %}
+                    {% render_field field class="form-control" type="date" %}
+                  {% else %}
+                    {% render_field field class="form-control" %}
+                  {% endif %}
+                  <small class="text-muted">{{ field.help_text }}</small>
+                  {{ field.errors }}
+                </div>
+              {% endfor %}
+              
+              <button type="submit" class="btn btn-primary btn-block mb-3">Sign Up</button>
+              <a href="{% url 'accounts:login' %}" class="btn btn-outline-secondary mb-3">Login Instead</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Custom CSS for form fields */
+    .form-control {
+      background-color: #f8f9fa; 
+    }
+  </style>
+{% endblock %}
+
+
+
+{% comment %} <!-- templates/accounts/invigilator_signup.html -->
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Sign Up as Invigilator{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center">Sign Up as Invigilator</h2>
+          </div>
+          <div class="card-body">
+            <form method="post" action="{% url 'accounts:invigilator_signup' %}">
+              {% csrf_token %}
+              
+              <div class="mb-3">
+                {{ form.username.label_tag }}
+                {% render_field form.username class="form-control" %}
+                <small class="text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
+                {{ form.username.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.email.label_tag }}
+                {% render_field form.email class="form-control" %}
+                <small class="text-muted">Enter a valid email address.</small>
+                {{ form.email.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.first_name.label_tag }}
+                {% render_field form.first_name class="form-control" %}
+                {{ form.first_name.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.middle_name.label_tag }}
+                {% render_field form.middle_name class="form-control" %}
+                {{ form.middle_name.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.last_name.label_tag }}
+                {% render_field form.last_name class="form-control" %}
+                {{ form.last_name.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.date_of_birth.label_tag }}
+                {% render_field form.date_of_birth class="form-control" %}
+                {{ form.date_of_birth.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.password1.label_tag }}
+                {% render_field form.password1 class="form-control" %}
+                <small class="text-muted">
+                  Your password can’t be too similar to your other personal information.
+                  Your password must contain at least 8 characters.
+                  Your password can’t be a commonly used password.
+                  Your password can’t be entirely numeric.
+                </small>
+                {{ form.password1.errors }}
+              </div>
+              
+              <div class="mb-3">
+                {{ form.password2.label_tag }}
+                {% render_field form.password2 class="form-control" %}
+                <small class="text-muted">Enter the same password as before, for verification.</small>
+                {{ form.password2.errors }}
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Custom CSS for form fields */
+    .form-control {
+      background-color: #f8f9fa; 
+      
+    }
+  </style>
+{% endblock %} {% endcomment %}

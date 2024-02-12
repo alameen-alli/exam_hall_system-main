@@ -1,0 +1,28 @@
+<!-- main/templates/allocation.html -->
+{% extends 'main/base.html' %}
+
+{% block title %}Seat Allocation{% endblock %}
+
+{% block content %}
+    <style>
+        .bg-danger-light{
+            background-color: #ddbbbb;
+        }
+    </style>
+
+    <div class="container mt-3">
+        <h2 class="mb-4">Seat Allocation Process</h2>
+        <p>This page initiates the seat allocation process. Press the button to start the allocation for exams sheduled for today.</p>
+
+        {% if message %}
+            <div class="rounded bg-danger-light text-danger p-3 mb-3">
+                {{ message }}
+            </div>
+        {% endif %}
+        
+        <form action="{% url 'main:allocate' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Allocate Seats</button>
+        </form>
+    </div>
+{% endblock %}

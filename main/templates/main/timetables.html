@@ -1,0 +1,88 @@
+{% extends 'main/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Timetable{% endblock%}
+
+{% block content %}
+    <h1 style="margin-top: 40px;">TimeTable List</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="{{ form.course.id_for_label }}">Course:</label>
+                            {{ form.course|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.exam_date.id_for_label }}">Exam Date:</label>
+                            {% comment %} {{ form.exam_date|add_class:"form-control" }} {% endcomment %}
+                            <input type="date" id="exam_date" name="exam_date"
+                            placeholder="dd-mm-yyyy" class="form-control">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="{{ form.exam_time.id_for_label }}">Exam Time:</label>
+                            <input type="time" id="exam_time" name="exam_time" 
+                            min="08:00" max="16:00" class="form-control" required/>
+                            {% comment %} {{ form.exam_time|add_class:"form-control" }} {% endcomment %}
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Add Timetable Entry</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post" enctype="multipart/form-data" action={% url 'main:create_timetable' %}>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="csv_file">Upload CSV File:</label>
+                        <input class="form-control-file" type="file" name="csv_file" required>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Import from CSV</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-container bg-light mt-2 p-3 rounded border">
+                <form method="post" action="{% url 'main:generate' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exam_date">Exam Start Date</label>
+                        <input class="form-control" type="date" name="exam_date" required>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Generate Timetable</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Course</th>
+                <th scope="col">Exam Date</th>
+                <th scope="col">Exam Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in timetable %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ entry.course }}</td>
+                    <td>{{ entry.exam_date }}</td>
+                    <td>{{ entry.exam_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

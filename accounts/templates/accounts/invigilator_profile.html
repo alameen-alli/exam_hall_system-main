@@ -1,0 +1,27 @@
+<!-- templates/invigilator_profile.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2>{{ invigilator.username }} Profile</h2>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Email:</strong> {{ invigilator.email }}</p>
+                        <p><strong>First Name:</strong> {{ invigilator.first_name }}</p>
+                        <p><strong>Middle Name:</strong> {{ invigilator.middle_name }}</p>
+                        <p><strong>Last Name:</strong> {{ invigilator.last_name }}</p>
+                        <p><strong>Date of Birth:</strong> {{ invigilator.date_of_birth }}</p>
+                        <!-- Add more invigilator details here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

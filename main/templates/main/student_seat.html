@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Student Information</h2>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><strong>First Name:</strong> {{ student.first_name }}</p>
+        <p class="card-text"><strong>Middle Name:</strong> {{ student.middle_name }}</p>
+        <p class="card-text"><strong>Last Name:</strong> {{ student.last_name }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ student.email }}</p>
+        <p class="card-text"><strong>Date of Birth:</strong> {{ student.date_of_birth }}</p>
+        <p class="card-text"><strong>Assigned Hall:</strong> 
+            {% if assigned_seat %}
+                <span  class="text-success">Your assigned seat is at position ({{ assigned_seat.position_x }}, {{ assigned_seat.position_y }}) in <strong>hall {{ assigned_seat.hall }}</strong></span>
+            {% else %}
+                <span class="text-danger">You don't have an assigned <strong>Hall</strong> yet.</span>
+            {% endif %}
+                </span>
+      </div>
+    </div>
+
+    <h3 class="mt-4">Courses Offered</h3>
+    <ul class="list-group">
+        {% if student_courses %}
+            {% for course in student_courses %}
+                <li class="list-group-item">{{ course.name }} - {{ course.code }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+    <h3 class="mt-4">Today's Courses</h3>
+    <ul class="list-group">
+      {% if student_today_courses %}
+        {% for course in student_today_courses %}
+            <li class="list-group-item">{{ course.name }} - {{ course.code }}</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+{% endblock %}
+

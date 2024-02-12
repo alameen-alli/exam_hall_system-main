@@ -1,0 +1,9 @@
+asgiref==3.7.2
+Django==3.0
+# django-extensions
+django-widget-tweaks
+more_itertools
+Pillow==9.5.0
+psycopg2-binary==2.8.6
+python-dotenv
+sqlparse==0.4.4

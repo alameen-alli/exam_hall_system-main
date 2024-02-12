@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Seats{% endblock%}
+
+{% block content %}
+    <h1 style="margin-top: 40px;">Seat List</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="{{ form.hall.id_for_label }}">Hall:</label>
+                            {{ form.hall|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.student.id_for_label }}">Student:</label>
+                            {{ form.student|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="{{ form.position_x.id_for_label }}">Position X:</label>
+                            {{ form.position_x|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="{{ form.position_y.id_for_label }}">Position Y:</label>
+                            {{ form.position_y|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Add Seat</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="csv_file">Upload CSV File:</label>
+                        <input class="form-control-file" type="file" name="csv_file" required>
+                        {{ form.csv_file|add_class:"form-control-file" }}
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Import from CSV</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hall</th>
+                <th scope="col">Student</th>
+                <th scope="col">Position X</th>
+                <th scope="col">Position Y</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seat in seats %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ seat.hall }}</td>
+                    <td>{{ seat.student }}</td>
+                    <td>{{ seat.position_x }}</td>
+                    <td>{{ seat.position_y }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

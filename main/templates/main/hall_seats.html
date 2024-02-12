@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Halls{% endblock%}
+
+{% block content %}
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        .bg-filled{
+            background-color: #ccffcc;
+        }
+        .hall-container{
+            width:80%;
+            overflow-x:hidden;
+        }
+        .seat-container {
+            width:100%; 
+            display:grid;
+            gap:10px;
+            overflow-x: scroll;
+        }
+        .fill-height{
+            height:100%;
+        }
+    </style>
+    <div class="hall-container">
+        <h1 style="margin-top: 40px;">Halls and Seats</h1>
+
+        {% for hall, seats in hall_seat_data.items %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    {{ hall.name }}
+                </div>
+                <div class="card-body">
+                    <div class="seat-container">
+                        {% for seat in seats %}
+                            <div style="grid-column:{{ seat.position_y }};">
+                                {% if seat.student %}
+                                    <div class="rounded border bg-filled p-2 fill-height">
+                                        Seat: {{ seat.position_x }}, {{ seat.position_y }}
+                                        <span class="bold">{{ seat.student }}</span>
+                                    </div>
+                                {% else %}
+                                    <div class="rounded border bg-light p-2 fill-height">
+                                        Seat: {{ seat.position_x }}, {{ seat.position_y }}
+                                        <span class="bold">{{ seat.student }}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>    
+            </div>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+                    
+{% endblock content %}

@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Halls{% endblock%}
+
+{% block content %}
+    <h1 style="margin-top: 40px;">Hall List</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="{{ form.name.id_for_label }}">Hall Name:</label>
+                            {{ form.name|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.capacity.id_for_label }}">Capacity:</label>
+                            {{ form.capacity|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="{{ form.num_columns.id_for_label }}">Number of Columns:</label>
+                            {{ form.num_columns|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="{{ form.num_rows.id_for_label }}">Number of Rows:</label>
+                            {{ form.num_rows|add_class:"form-control" }}
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Add Hall</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-container bg-light p-3 rounded border">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="csv_file">Upload CSV File:</label>
+                        <input class="form-control-file" type="file" name="csv_file" required>
+                        {% comment %} {{ form.csv_file|add_class:"form-control-file" }} {% endcomment %}
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Import from CSV</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hall Name</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Description</th>
+                <th scope="col">Number of Columns</th>
+                <th scope="col">Number of Rows</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hall in halls %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ hall.name }}</td>
+                    <td>{{ hall.capacity }}</td>
+                    <td>{{ hall.description }}</td>
+                    <td>{{ hall.num_columns }}</td>
+                    <td>{{ hall.num_rows }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

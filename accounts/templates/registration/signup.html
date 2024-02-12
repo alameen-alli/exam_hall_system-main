@@ -1,0 +1,28 @@
+<!-- templates/signup_choice.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign Up | 
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Welcome to Exam Hall System</h2>
+                        <p>Choose your role to get started:</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mt-4">
+                            <a href="{% url 'accounts:invigilator_signup' %}" class="btn btn-success btn-lg mr-3 mb-3">Log In as Invigilator</a>
+                            <a href="{% url 'accounts:student_signup' %}" class="btn btn-warning btn-lg mb-3">Login as Student</a>
+                            <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary btn-lg mb-3">Login In Instead</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
